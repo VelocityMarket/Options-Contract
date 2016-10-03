@@ -157,5 +157,9 @@ def exercise(this_contract, optionId= None):
 exercise(this_contract)
 
 ```
-
 The way exercise function works is that it looks for the `msg.sender` to see if there's any unsettled options and will settle the first one it finds. There's also the possibility to pass OptionId to the function to settle a specific option.
+
+## Do you want to know more?
+- Check out our website [velocity.technology](http://velocity.technology)
+- Join our [Slack Channel](http://velocity-slack.herokuapp.com/)
+- Check out our [blog](http://blog.velocity.technology/)

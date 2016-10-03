@@ -154,12 +154,12 @@ contract finalOptions {
     exercise(findOptionId(msg.sender));
   }
 
-  function exercise(uint optionId) public returns(bool) { //removed isExpire() modifier. cause no price if not expired! right?
+  function exercise(uint optionId) public returns(bool) {
     //LogMe("exercise called");
     PriceDetails memory pricesToCheck;
     (pricesToCheck.priceAtBlockStarted, ,pricesToCheck.blockStarted) = getBTCETH(AllOptions[optionId].StartedAtBlock);
     (pricesToCheck.priceAtBlockExpired, ,pricesToCheck.blockExpired) = getBTCETH(AllOptions[optionId].StartedAtBlock + BlocksToExpire);
-    //catch if any of the price gets from pricegeth is returning 0 // this will prevent unexpire options to execute !
+    //catch if any of the price gets from pricegeth is returning 0 (null) // this will prevent unexpire options to execute !
     if ((pricesToCheck.priceAtBlockStarted == 0) || (pricesToCheck.priceAtBlockExpired == 0)) {
       Error("Price has not been published by pricegeth yet, try again after a few blocks");
       debugPriceGeth(optionId, AllOptions[optionId].StartedAtBlock, pricesToCheck.priceAtBlockStarted, (AllOptions[optionId].StartedAtBlock + BlocksToExpire), pricesToCheck.priceAtBlockExpired, AllOptions[optionId].Long, AllOptions[optionId].Short, AllOptions[optionId].amount);
