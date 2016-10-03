@@ -1,7 +1,7 @@
 
 // Velocity.technology - Shayan Eskandari (shayan at bitaccess.co)
 // this version the smart contract should be funded using fundMe()
-// Options Demo 0.8
+// Options Demo 0.8.2
 
 pragma solidity ^0.4.0;
 
@@ -66,6 +66,7 @@ contract finalOptions {
       throw;}
        _ ;}
 
+  modifier isOpen(uint optionId) {if (AllOptions[optionId].closed) throw; _ ;}
 
   //events
   event Error(string message);
@@ -154,7 +155,7 @@ contract finalOptions {
     exercise(findOptionId(msg.sender));
   }
 
-  function exercise(uint optionId) public returns(bool) {
+  function exercise(uint optionId) public isOpen(optionId) returns(bool) {
     //LogMe("exercise called");
     PriceDetails memory pricesToCheck;
     (pricesToCheck.priceAtBlockStarted, ,pricesToCheck.blockStarted) = getBTCETH(AllOptions[optionId].StartedAtBlock);

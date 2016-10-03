@@ -19,7 +19,7 @@ Testnet Morden: [0x83a6fef3c30fbbf3577d05532cf4cf6d9e7131d5](https://testnet.eth
 
 # Clients
 ## Online UI
-UI designed to talk to the smart contract and visualize the price from [PriceGeth](https://github.com/VelocityMarket/pricegeth). This webbased interface uses [Metamask](metamask.io) chrome extension integration for easier use.
+UI designed to talk to the smart contract and visualize the price from [PriceGeth](https://github.com/VelocityMarket/pricegeth). This web-based interface uses [Metamask](metamask.io) chrome extension integration for easier use. You can also use your own way of connecting an Ethereum testnet RPC server to the browser (e.g Geth, web3 provider javascript injection, and probably CORS sharing).
 
 [Velocity Demo](https://demo.velocity.technology/)
 
@@ -41,10 +41,8 @@ if (typeof web3 !== 'undefined') {
 function initContract(contractAbi, contractAddress) {
   var MyContract = web3.eth.contract(contractAbi);
   var contractInstance = MyContract.at(contractAddress);
-  // deploy new contract
   var event = contractInstance.allEvents()
   console.log("listening for events on ", contractAddress)
-  // watch for changes
   event.watch(function(error, result){ //This is where events can trigger changes in UI
     if (!error)
       console.log(result);
