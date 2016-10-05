@@ -7,12 +7,12 @@ Unlike traditional derivatives that require a third party, Velocity utilizes sma
 # Options-Contract
 To begin with, Velocity will start with an implementation of a simple collared option contract. In the future, we plan to add a variety of derivatives based on market dynamics.
 
-This is used to offset the risk of an option contract by creating a “collar” above and below the original strike price. This limits the risk (and profit) to an option’s expiring price, reducing volatility for investors. Read more about this implementation in the Velocity whitepaper.
+This is used to offset the risk of an option contract by creating a “collar” above and below the original strike price. This limits the risk (and profit) to an option’s expiring price, reducing volatility for investors. Read more about this implementation in the [Velocity whitepaper](http://velocity.technology/doc/velocity_whitepaper.pdf).
 
 
 
 ### Latest Contract Address
-Testnet Morden: [0xbf96dd605b99922d067a8570f39936631234dcc6](https://testnet.etherscan.io/address/0xbf96dd605b99922d067a8570f39936631234dcc6)
+Testnet Morden: [0x8FB92504bBa6FA57c176f67C01D9bcB05e9beB3E](https://testnet.etherscan.io/address/0x8FB92504bBa6FA57c176f67C01D9bcB05e9beB3E)
 
 -------------------------
 
@@ -52,7 +52,7 @@ function initContract(contractAbi, contractAddress) {
 }
 
 
-OptionsContract = initContract(optionsABI, '0xbf96dd605b99922d067a8570f39936631234dcc6')
+OptionsContract = initContract(optionsABI, '0x8FB92504bBa6FA57c176f67C01D9bcB05e9beB3E')
 
 ```
 
@@ -121,7 +121,7 @@ def init_contract(abi_json, contract_address):
     return this_contract
 
 
-this_contract = init_contract("0xbf96dd605b99922d067a8570f39936631234dcc6")
+this_contract = init_contract("0x8FB92504bBa6FA57c176f67C01D9bcB05e9beB3E")
 
 ```
 

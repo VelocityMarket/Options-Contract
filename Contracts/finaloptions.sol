@@ -6,6 +6,7 @@
 pragma solidity ^0.4.0;
 
 import "pricegeth.sol";
+//import "github.com/VelocityMarket/pricegeth/contracts/pricegeth.sol";
 
 contract finalOptions {
 
