@@ -28,7 +28,7 @@ UI designed to talk to the smart contract and visualize the price from [PriceGet
 
 ## [Web3.js](https://github.com/ethereum/web3.js/) Client
 
-###### Initiate the contract instance
+##### Initiate the contract instance
 ```
 var Web3 = require('web3');
 
@@ -59,7 +59,7 @@ OptionsContract = initContract(optionsABI, '0x8FB92504bBa6FA57c176f67C01D9bcB05e
 
 ```
 
-###### Go short on the (next) block time
+##### Go short on the (next) block time
 ```
 function goShort(contractInstance, margin){
   //go short with margin (which should be 0.00001 ETH * 1000 = 0.1 ETH -> 100000000000000000)
@@ -77,7 +77,7 @@ function goShort(contractInstance, margin){
 goShort(OptionsContract, 100000000000000000)
 ```
 
-###### Go Long on the (next) block time
+##### Go Long on the (next) block time
 ```
 function goLong(contractInstance, margin){
   //go long with margin * LOT (which should be 0.00001 ETH * 1000 = 0.1 ETH -> 100000000000000000)
@@ -95,7 +95,7 @@ function goLong(contractInstance, margin){
 goLong(OptionsContract, 100000000000000000)
 ```
 
-###### Settle (exercise) the last options called by web3.eth.defaultAccount
+##### Settle (exercise) the last options called by web3.eth.defaultAccount
 ```
 function exercise(contractInstance) {
   contractInstance.exercise.sendTransaction({from: web3.eth.defaultAccount, gas: 400000}, function(err, result){
@@ -110,7 +110,7 @@ function exercise(contractInstance) {
 
 ## [Web3.py](https://github.com/pipermerriam/web3.py) Client
 
-###### Initiate the contract instance
+##### Initiate the contract instance
 ```
 from web3 import Web3, RPCProvider
 import json
@@ -128,7 +128,7 @@ this_contract = init_contract("0x8FB92504bBa6FA57c176f67C01D9bcB05e9beB3E")
 
 ```
 
-###### Go short on the (next) block time
+##### Go short on the (next) block time
 ```
 def goShort(this_contract, margin):
     send_transaction = this_contract.transact({"value":margin, "gas": 4000000}).goShort()
@@ -137,7 +137,7 @@ def goShort(this_contract, margin):
 goShort(this_contract, margin = 100000000000000000)
 ```
 
-###### Go Long on the (next) block time
+##### Go Long on the (next) block time
 ```
 def goShort(this_contract, margin):
     send_transaction = this_contract.transact({"value":margin, "gas": 4000000}).goLong()
@@ -146,7 +146,7 @@ def goShort(this_contract, margin):
 goLong(this_contract, margin = 100000000000000000)
 ```
 
-###### Settle (exercise) the last options called by web3.eth.defaultAccount
+##### Settle (exercise) the last options called by web3.eth.defaultAccount
 ```
 def exercise(this_contract, optionId= None):
     if optionId is not None:
