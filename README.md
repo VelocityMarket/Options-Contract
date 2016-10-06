@@ -23,6 +23,9 @@ UI designed to talk to the smart contract and visualize the price from [PriceGet
 
 [Velocity Demo](https://demo.velocity.technology/)
 
+![Velocity UI Demo](https://pbs.twimg.com/media/CuCQoQjVIAA6Y6M.jpg)
+
+
 ## [Web3.js](https://github.com/ethereum/web3.js/) Client
 
 ###### Initiate the contract instance
