@@ -9,13 +9,18 @@ To begin with, Velocity will start with an implementation of a simple collared o
 
 This is used to offset the risk of an option contract by creating a “collar” above and below the original strike price. This limits the risk (and profit) to an option’s expiring price, reducing volatility for investors. Read more about this implementation in the [Velocity whitepaper](http://velocity.technology/doc/velocity_whitepaper.pdf).
 
+## FAQ
+Please check out [FAQ page on Velocity website](http://velocity.technology/frequently-asked-questions) 
 
-
-### Latest Contract Address
-Testnet Morden: [0x8FB92504bBa6FA57c176f67C01D9bcB05e9beB3E](https://testnet.etherscan.io/address/0x8FB92504bBa6FA57c176f67C01D9bcB05e9beB3E)
+## Do you want to know more?
+- Check out our website [velocity.technology](http://velocity.technology)
+- Join our [Slack Channel](http://velocity-slack.herokuapp.com/)
+- Check out our [blog](http://blog.velocity.technology/)
 
 -------------------------
-
+### Latest Contract Address
+Testnet Morden: [0x8FB92504bBa6FA57c176f67C01D9bcB05e9beB3E](https://testnet.etherscan.io/address/0x8FB92504bBa6FA57c176f67C01D9bcB05e9beB3E)
+-------------------------
 
 # Clients
 ## Online UI
@@ -26,7 +31,7 @@ UI designed to talk to the smart contract and visualize the price from [PriceGet
 ![Velocity UI Demo](https://pbs.twimg.com/media/CuCQoQjVIAA6Y6M.jpg)
 
 
-## [Web3.js](https://github.com/ethereum/web3.js/) Client
+## [Web3.js (NodeJS)](https://github.com/ethereum/web3.js/) Client
 
 ##### Initiate the contract instance
 ```
@@ -108,7 +113,7 @@ function exercise(contractInstance) {
 }
 ```
 
-## [Web3.py](https://github.com/pipermerriam/web3.py) Client
+## [Web3.py (Python)](https://github.com/pipermerriam/web3.py) Client
 
 ##### Initiate the contract instance
 ```
@@ -160,8 +165,3 @@ exercise(this_contract)
 
 ```
 The way exercise function works is that it looks for the `msg.sender` to see if there's any unsettled options and will settle the first one it finds. There's also the possibility to pass OptionId to the function to settle a specific option.
-
-## Do you want to know more?
-- Check out our website [velocity.technology](http://velocity.technology)
-- Join our [Slack Channel](http://velocity-slack.herokuapp.com/)
-- Check out our [blog](http://blog.velocity.technology/)
